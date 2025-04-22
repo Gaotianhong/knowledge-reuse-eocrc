@@ -1,6 +1,6 @@
-# Intelligent Knowledge Reuse Models for Early-Onset Colorectal Cancer Detection and Lymph Node Metastasis Prediction Using CT Data
+# Intelligent Knowledge Reuse for Early-Onset Colorectal Cancer Detection and Lymph Node Metastasis Prediction Using CT
 
-This repository contains code for the paper `Intelligent Knowledge Reuse Models for Early-Onset Colorectal Cancer Detection and Lymph Node Metastasis Prediction Using CT Data`.
+This repository contains code for the paper `Intelligent Knowledge Reuse for Early-Onset Colorectal Cancer Detection and Lymph Node Metastasis Prediction Using CT`.
 
 ## Code Structure
 
