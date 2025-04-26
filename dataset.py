@@ -42,7 +42,7 @@ class CRCDataset(Dataset):
         crc_path = list(map(list, zip(*crc_path)))
 
         abnormal_num, box_num, normal_num = 0, 0, 0
-        center_list = ['金华', '李惠利大肠癌数据', '浙大一']
+        center_list = ['Institution I', 'Institution II', 'Institution III', ]
         center_abnormal = dict.fromkeys(center_list, 0)
         center_normal = dict.fromkeys(center_list, 0)
         for i in mode_index:
@@ -646,7 +646,7 @@ class LNMDualDemoDataset(Dataset):
         crc_lnm_bbox = json.load(open(CRC_LNM_BBOX_PATH, 'r'))
 
         lnm = dict.fromkeys(LABEL_LIST, 0)
-        lnm_jinhua = dict.fromkeys(LABEL_LIST, 0)
+        lnm_jh = dict.fromkeys(LABEL_LIST, 0)
         lnm_lhl = dict.fromkeys(LABEL_LIST, 0)
         for i in range(len(lnm_path)):
             label = LABEL_MAP[int(lnm_path[i][3])]
@@ -676,9 +676,9 @@ class LNMDualDemoDataset(Dataset):
                         lnm[label] += 1
 
                         center = path.split('/')[1]
-                        if center == '金华':
-                            lnm_jinhua[label] += 1
-                        elif center == '李惠利大肠癌数据':
+                        if center == 'Institution III':
+                            lnm_jh[label] += 1
+                        elif center == 'Institution II':
                             lnm_lhl[label] += 1
 
             if len(paths) != 0:
@@ -687,7 +687,7 @@ class LNMDualDemoDataset(Dataset):
                 self.labels.append(label)
 
         print('patient LNM:{} {}'.format(sum(lnm.values()), lnm))
-        print('patient jinhua LNM:{} {}'.format(sum(lnm_jinhua.values()), lnm_jinhua))
+        print('patient jinhua LNM:{} {}'.format(sum(lnm_jh.values()), lnm_jh))
         print('patient lhl LNM:{} {}'.format(sum(lnm_lhl.values()), lnm_lhl))
 
     def __getitem__(self, idx):
